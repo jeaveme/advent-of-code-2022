@@ -6,8 +6,7 @@ use std::io::stdin;
 
 use exercise_1::calorie_counting;
 use exercise_2::rock_paper_scissors;
-
-use crate::exercise_3::reorg_rucksack;
+use exercise_3::reorg_rucksack;
 
 fn main() -> Result<(), &'static str> {
     let mut input = String::new();

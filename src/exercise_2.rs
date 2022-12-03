@@ -35,7 +35,7 @@ fn get_hand(value: &str) -> Hand {
     }
 }
 
-fn calculate_point_strategy_1(opponent_hand: Hand, my_hand: Hand) -> usize {
+fn calculate_points_strategy_1(opponent_hand: Hand, my_hand: Hand) -> usize {
     let points: usize = if opponent_hand == my_hand {
         3
     } else {
@@ -54,7 +54,7 @@ fn calculate_point_strategy_1(opponent_hand: Hand, my_hand: Hand) -> usize {
     return (my_hand as usize) + points;
 }
 
-fn calculate_point_strategy_2(opponent_hand: Hand, my_outcome: Outcome) -> usize {
+fn calculate_points_strategy_2(opponent_hand: Hand, my_outcome: Outcome) -> usize {
     match my_outcome {
         Outcome::Draw => 3 + opponent_hand as usize,
         Outcome::Win => {
@@ -87,8 +87,8 @@ pub fn rock_paper_scissors() -> Result<(), &'static str> {
         let strategy_vector = strategy_line.split_whitespace().collect::<Vec<&str>>();
         let opponent_hand = get_hand(strategy_vector[0]);
         let my_value = strategy_vector[1];
-        score_strategy_1 += calculate_point_strategy_1(opponent_hand, get_hand(my_value));
-        score_strategy_2 += calculate_point_strategy_2(opponent_hand, Outcome::from(my_value));
+        score_strategy_1 += calculate_points_strategy_1(opponent_hand, get_hand(my_value));
+        score_strategy_2 += calculate_points_strategy_2(opponent_hand, Outcome::from(my_value));
     }
     println!("Answer A: Total score strategy 1 = {score_strategy_1}");
     println!("Answer A: Total score strategy 2 = {score_strategy_2}");
