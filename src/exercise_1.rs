@@ -1,4 +1,3 @@
-use core::panic;
 use std::{
     fs::File,
     io::{BufRead, BufReader},
