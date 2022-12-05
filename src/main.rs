@@ -10,8 +10,7 @@ use exercise_1::calorie_counting;
 use exercise_2::rock_paper_scissors;
 use exercise_3::reorg_rucksack;
 use exercise_4::camp_cleanup;
-
-use crate::exercise_5::stack_supplies;
+use exercise_5::stack_supplies;
 
 fn main() -> Result<(), &'static str> {
     let mut input = String::new();
